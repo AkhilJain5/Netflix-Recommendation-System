@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Recommendation System</title>
+    <style>
+        body {
+            background-image: url('https://www.notebookcheck.net/fileadmin/Notebooks/News/_nc3/netflixteaser.png');
+            background-size: cover;
+            background-position: center;
+            font-family: Arial, sans-serif;
+            color: white;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        
+        h1, label {
+            text-align: center;
+        }
+    
+        form {
+            max-width: 400px;
+            padding: 20px;
+            background-color: black;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    
+        select, input, button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            display: inline-block;
+            border: 10px solid #ccc;
+            box-sizing: border-box;
+            border-radius: 10px;
+            color: black; /* Text color */
+        }
+    
+        button {
+            background-color: #ac4c4c;
+            color: white;
+            cursor: pointer;
+        }
+    </style>    
+</head>
+<body>
+    <form action="/recommend" method="post">
+        <label for="recommend_type">Netflix Movie Recommendation System:</label>
+        <select id="recommend_type" name="recommend_type" required>
+            <option value="byname">By Movie Name</option>
+            <option value="bygenre">By Genre</option>
+        </select>
+        <br>
+        <label for="input_value">Enter Movie Name or Genre:</label>
+        <input type="text" id="input_value" name="input_value" required>
+        <br>
+        <button type="submit">Get Recommendations</button>
+    </form>
+</body>
+</html>

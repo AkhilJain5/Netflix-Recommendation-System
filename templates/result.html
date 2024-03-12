@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recommendations</title>
+    <style>
+        body {
+            background-image: url('https://www.notebookcheck.net/fileadmin/Notebooks/News/_nc3/netflixteaser.png');
+            background-size: cover;
+            background-position: center;
+            font-family: Arial, sans-serif;
+            color: rgb(2, 2, 2);
+        }
+
+        h2, table, p {
+            text-align: center;
+            color: rgb(255, 255, 255);
+        }
+
+        table {
+            margin: 0 auto;
+            font-size: 16px;
+            border-collapse: collapse;
+            background-color: #9e2727;
+            width: 80%;
+        }
+
+        th, td {
+            border: 1px solid #000000;
+            text-align: left;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #000000;
+        }
+
+    </style>
+</head>
+<body>
+    <h2>Top 10 Movie Recommendations</h2>
+    {% if tables %}
+        {% for table in tables %}
+            {{ table|safe }}
+        {% endfor %}
+    {% else %}
+        <p>No recommendations found.</p>
+    {% endif %}
+    <br>
+    <a href="/">Back to Home</a>
+</body>
+</html>
